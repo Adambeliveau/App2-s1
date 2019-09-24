@@ -53,7 +53,22 @@ bool Detection_Palidrome(char chaine[])
 
 float Calcul_Sinus(float Radian)
 {
-	
+	int y = 1;
+	int x_puissance_y;
+	float sinus;
+	for(int i=1;i<nb_terme;i++)
+	{
+		if(i%2==0)
+		{
+			x_puissance_y = exposant(y, radian);
+		}
+		else
+		{
+			x_puissance_y = exposant(y, radian)*-1;
+		}
+		
+		sinus += x_puissance_y/;
+	}
 }
 
 float Calcul_Cosinus(float Radian)
@@ -71,6 +86,23 @@ void Multiplication_Matrice(int Matrice1[], int Matrice2[], int Matrice3[])
 	
 }
 
+float exposant(int puissance, int nombre)
+{
+	for(int i=1;i<=puissance;i++)
+	{
+		nombre*=;
+	}
+	return nombre;
+}
+float factoriel(int puissance_factoriel)
+{
+	float somme_factoriel;
+	for(int i=1;i<=puissance_factoriel;i++)
+	{
+		somme_factoriel*=i;
+	}
+	return somme_factoriel;
+}
 
 
 
