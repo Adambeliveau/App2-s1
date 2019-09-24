@@ -12,6 +12,8 @@ float Calcul_Sinus(float);
 float Calcul_Cosinus(float);
 void Addition_Matrice(int[][],int[][],int [][]);
 void Multiplication_Matrice(int,[][],int[][],int[][]);
+float exposant(int, int);
+float factoriel (int);
 
 
 void main()
@@ -73,7 +75,22 @@ float Calcul_Sinus(float Radian)
 
 float Calcul_Cosinus(float Radian)
 {
-	
+	int y = 0;
+	int x_puissance_y;
+	float cosinus;
+	for(int i=1;i<nb_terme;i++)
+	{
+		if(i%2==0)
+		{
+			x_puissance_y = exposant(y, radian);
+		}
+		else
+		{
+			x_puissance_y = exposant(y, radian)*-1;
+		}
+		
+		cosinus += x_puissance_y/;
+	}
 }
 
 void Addition_Matrice(int Matrice1[], int Matrice2[], int Matrice3[])
