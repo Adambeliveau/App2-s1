@@ -1,34 +1,34 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-const int n=3;
-const int m=2;
+#define n 3
+#define m 2
 const int nb_terme = 5;
 
 
-int Recherche_Carac(char[],char);
-bool Detection_Palidrome(char[]);
+int Recherche_Carac(char[60],char);
+bool Detection_Palidrome(char[25]);
 float Calcul_Sinus(float);
 float Calcul_Cosinus(float);
-void Addition_Matrice(int[][],int[][]);
-void Multiplication_Matrice(int,[][],int[][]);
+void Addition_Matrice(int(*)[m],int(*)[m]);
+void Multiplication_Matrice(int[m][m],int[m][m]);
 float exposant(int, int);
 float factoriel (int);
 
 
-void main()
+int main()
 {
 	int longueur_max_chaine_mots = 60;
 	int Buffer_mot = 10;
 	float PI = 3.14159265;
 	char caractere_rechercher;
 	int indice_caractere_rechercher;
-	char chaine_mots[longueur_max_chaine_mots];
+	char *chaine_mots[longueur_max_chaine_mots];
 	bool isPalindrome;
-	char palindrome[Buffer_mot];
-	char faux_palindrome1[Buffer_mot];
-	char faux_palindrome2[Buffer_mot];
-	char faux_palindrome3[Buffer_mot];
+	char *palindrome[Buffer_mot];
+	char *faux_palindrome1[Buffer_mot];
+	char *faux_palindrome2[Buffer_mot];
+	char *faux_palindrome3[Buffer_mot];
 	float valeur_sin_cos;
 	float radian1;
 	float radian2;
@@ -37,11 +37,11 @@ void main()
 	int Matrice_Multiplication1[m][m];
 	int Matrice_Multiplication2[m][m];
 	
-	chaine_mots[]="allo le monde";
-	palindrome[]="laval";
-	faux_palindrome1[]="Laval";
-	faux_palindrome2[]="làval";
-	faux_palindrome3[]="genie";
+	chaine_mots[longueur_max_chaine_mots]="allo le monde";
+	palindrome[Buffer_mot]="laval";
+	faux_palindrome1[Buffer_mot]="Laval";
+	faux_palindrome2[Buffer_mot]="làval";
+	faux_palindrome3[Buffer_mot]="genie";
 	radian1 = PI/2;
 	radian2 = PI;
 	Matrice_Addition1[0][0]=1;
@@ -68,49 +68,49 @@ void main()
 	
 	printf("Recherche de caractere : \n");
 	caractere_rechercher='o';
-	indice_caractere_rechercher = Recherche_Carac(chaine_mots[],caractere_rechercher);
-	printf("\tindice du 'o' : %d\n",&indice_caractere_rechercher);
+	indice_caractere_rechercher = Recherche_Carac(chaine_mots[longueur_max_chaine_mots],caractere_rechercher);
+	printf("\tindice du 'o' : %d\n",indice_caractere_rechercher);
 	printf("\t\tValeur theorique : 4\n");
 	
 	caractere_rechercher='e';
-	indice_caractere_rechercher = Recherche_Carac(chaine_mots[],caractere_rechercher);
-	printf("\tindice du 'e' : %d\n",&indice_caractere_rechercher);
+	indice_caractere_rechercher = Recherche_Carac(chaine_mots[longueur_max_chaine_mots],caractere_rechercher);
+	printf("\tindice du 'e' : %d\n",indice_caractere_rechercher);
 	printf("\t\tValeur theorique : 6\n");
 	
 	caractere_rechercher='m';
-	indice_caractere_rechercher = Recherche_Carac(chaine_mots[],caractere_rechercher);
-	printf("\tindice du 'm' : %d\n",&indice_caractere_rechercher);
+	indice_caractere_rechercher = Recherche_Carac(chaine_mots[longueur_max_chaine_mots],caractere_rechercher);
+	printf("\tindice du 'm' : %d\n",indice_caractere_rechercher);
 	printf("\t\tValeur theorique : 7\n");
 	
 	caractere_rechercher='u';
-	indice_caractere_rechercher = Recherche_Carac(chaine_mots[],caractere_rechercher);
-	printf("\tindice du 'u' : %d\n",&indice_caractere_rechercher);
+	indice_caractere_rechercher = Recherche_Carac(chaine_mots[longueur_max_chaine_mots],caractere_rechercher);
+	printf("\tindice du 'u' : %d\n",indice_caractere_rechercher);
 	printf("\t\tValeur theorique : -1\n\n");
 	
-	printf("Detection de palindrome: \n")
-	isPalindrome = Detection_Palidrome(palindrome[]);
+	printf("Detection de palindrome: \n");
+	isPalindrome = Detection_Palidrome(palindrome[Buffer_mot]);
 	if(isPalindrome)
-	printf("\t%c est un palindrome\n",&palindrome[]);
+	printf("\t%s est un palindrome\n",palindrome[Buffer_mot]);
 	else
-	printf("\t%c n'est pas un palindrome\n",&faux_palindrome1[]);
+	printf("\t%s n'est pas un palindrome\n",faux_palindrome1[Buffer_mot]);
 	
-	isPalindrome = Detection_Palidrome(faux_palindrome1[]);
+	isPalindrome = Detection_Palidrome(faux_palindrome1[Buffer_mot]);
 	if(isPalindrome)
-	printf("\t%c est un palindrome\n",&faux_palindrome1[]);
+	printf("\t%s est un palindrome\n",faux_palindrome1[Buffer_mot]);
 	else
-	printf("\t%c n'est pas un palindrome\n",&faux_palindrome1[]);
+	printf("\t%s n'est pas un palindrome\n",faux_palindrome1[Buffer_mot]);
 	
-	isPalindrome = Detection_Palidrome(faux_palindrome2[]);
+	isPalindrome = Detection_Palidrome(faux_palindrome2[Buffer_mot]);
 	if(isPalindrome)
-	printf("\t%c est un palindrome\n",&faux_palindrome2[]);
+	printf("\t%s est un palindrome\n",faux_palindrome2[Buffer_mot]);
 	else
-	printf("\t%c n'est pas un palindrome\n",&faux_palindrome2[]);
+	printf("\t%s n'est pas un palindrome\n",faux_palindrome2[Buffer_mot]);
 	
-	isPalindrome = Detection_Palidrome(faux_palindrome3[]);
+	isPalindrome = Detection_Palidrome(faux_palindrome3[Buffer_mot]);
 	if(isPalindrome)
-	printf("\t%c est un palindrome\n\n",&faux_palindrome3[]);
+	printf("\t%s est un palindrome\n\n",faux_palindrome3[Buffer_mot]);
 	else
-	printf("\t%c n'est pas un palindrome\n\n",&faux_palindrome3[]);
+	printf("\t%s n'est pas un palindrome\n\n",faux_palindrome3[Buffer_mot]);
 	
 	printf("Calcul Sinus : \n");
 	valeur_sin_cos = Calcul_Sinus(radian1);
@@ -127,10 +127,10 @@ void main()
 	printf("\tvaleur du Cosinus de PI : %f\n\n",valeur_sin_cos);
 	
 	printf("Addition de matrices : \n");
-	Addition_Matrice(Matrice_Addition1[][],Matrice_Addition2[][]);
+	Addition_Matrice(Matrice_Addition1,Matrice_Addition2);
 	
 	printf("\nMultiplication de matrices : \n");
-	Multiplication_Matrice(Matrice_Multiplication1[][],Matrice_Multiplication2[][]);
+	Multiplication_Matrice(Matrice_Multiplication1,Matrice_Multiplication2);
 	
 	return 0;
 	
@@ -143,10 +143,10 @@ void main()
 	
 	
 }
-int Recherche_Carac(char chaine[],char caractere_rechercher)
+int Recherche_Carac(char chaine[60],char caractere_rechercher)
 {
 	
-	int size_of_chaine = sizeof(chaine)/sizeof(chaine[0]);
+	int size_of_chaine = sizeof(chaine[60])/sizeof(chaine[0]);
 	
 	for(int i=0;i<=size_of_chaine;i++)
 	{
@@ -155,11 +155,12 @@ int Recherche_Carac(char chaine[],char caractere_rechercher)
 		else
 			return -1;
 	}
+	return 0;
 }
 
-bool Detection_Palidrome(char chaine[])
+bool Detection_Palidrome(char chaine[25])
 {
-	int size_of_chaine = sizeof(chaine)/sizeof(chaine[0]);
+	int size_of_chaine = sizeof(chaine[25])/sizeof(chaine[0]);
 	
 	for(int i=0;i<(size_of_chaine/2)-(size_of_chaine%2);i++)
 		{
@@ -168,7 +169,7 @@ bool Detection_Palidrome(char chaine[])
 			else
 				return true;
 		}
-	
+	return 0;
 }
 
 float Calcul_Sinus(float Radian)
@@ -180,15 +181,16 @@ float Calcul_Sinus(float Radian)
 	{
 		if(i%2==0)
 		{
-			x_puissance_y = exposant(y, radian);
+			x_puissance_y = exposant(y, Radian);
 		}
 		else
 		{
-			x_puissance_y = exposant(y, radian)*-1;
+			x_puissance_y = exposant(y, Radian)*-1;
 		}
 		
-		sinus += x_puissance_y/;
+		sinus += x_puissance_y;
 	}
+	return sinus;
 }
 
 float Calcul_Cosinus(float Radian)
@@ -200,18 +202,19 @@ float Calcul_Cosinus(float Radian)
 	{
 		if(i%2==0)
 		{
-			x_puissance_y = exposant(y, radian);
+			x_puissance_y = exposant(y, Radian);
 		}
 		else
 		{
-			x_puissance_y = exposant(y, radian)*-1;
+			x_puissance_y = exposant(y, Radian)*-1;
 		}
 		
-		cosinus += x_puissance_y/;
+		cosinus += x_puissance_y;
 	}
+	return cosinus;
 }
 
-void Addition_Matrice(int Matrice1[][], int Matrice2[][])
+void Addition_Matrice(int (*Matrice1)[m], int (*Matrice2)[m])
 {
 	int Matrice3[n][m];
 	
@@ -232,9 +235,10 @@ void Addition_Matrice(int Matrice1[][], int Matrice2[][])
 	}
 }
 
-void Multiplication_Matrice(int Matrice1[][], int Matrice2[][])
+void Multiplication_Matrice(int Matrice1[m][m], int Matrice2[m][m])
 {
 	int Matrice3[m][m];
+    int somme_Multiplication;
 	
 	for(int i=0;i<m;i++)
 	{
@@ -251,7 +255,7 @@ void Multiplication_Matrice(int Matrice1[][], int Matrice2[][])
 	{
 		for(int j=0;j<m;j++)
 		{
-			printf("%d\t"Matrice3[i][j]);
+			printf("%d\t",Matrice3[i][j]);
 		}
 	printf("\n");
 	}
@@ -259,9 +263,10 @@ void Multiplication_Matrice(int Matrice1[][], int Matrice2[][])
 
 float exposant(int puissance, int nombre)
 {
+    int total=1;
 	for(int i=1;i<=puissance;i++)
 	{
-		nombre*=;
+		total*=nombre;
 	}
 	return nombre;
 }
