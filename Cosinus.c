@@ -62,5 +62,7 @@ int main()
 	printf("\tvaleur du Cosinus de PI/2 : %f\n",valeur_sin_cos);
 	valeur_sin_cos = Calcul_Cosinus(radian2);
 	printf("\tvaleur du Cosinus de PI : %f\n\n",valeur_sin_cos);
+	
+	return 0;
 }
 
