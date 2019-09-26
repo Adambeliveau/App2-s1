@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-const int n=3;
+
 const int m=2;
 
 void Multiplication_Matrice(int Matrice1[m][m], int Matrice2[m][m])

@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-const int nb_terme = 10;
+const int nb_terme = 25
+;
 
 float exposant(int puissance, float nombre)
 {
@@ -55,16 +56,29 @@ int main()
 	float valeur_sin_cos;
 	float radian1;
 	float radian2;
+	float radian3;
+	float radian4;
 	
 	radian1 = PI/2;
 	radian2 = PI;
+	radian3 = 3*PI/2;
+	radian4 = 2*PI;
 	
 	printf("Calcul Sinus : \n");
 	valeur_sin_cos = Calcul_Sinus(radian1);
 	printf("\tvaleur du Sinus de PI/2 : %f\n",valeur_sin_cos);
+	printf("\tValeur theorique : 1\n\n");
 	
 	valeur_sin_cos = Calcul_Sinus(radian2);
 	printf("\tvaleur du Sinus de PI : %f\n\n",valeur_sin_cos);
+	printf("\tValeur theorique : 0\n\n");
 	
+	valeur_sin_cos = Calcul_Sinus(radian3);
+	printf("\tvaleur du Sinus de 3PI/2 : %f\n\n",valeur_sin_cos);
+	printf("\tValeur theorique : -1\n\n");
+	
+	valeur_sin_cos = Calcul_Sinus(radian4);
+	printf("\tvaleur du Sinus de 2PI : %f\n\n",valeur_sin_cos);
+	printf("\tValeur theorique : 0\n\n");
 	return 0;
 }
